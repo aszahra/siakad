@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jurusan;
 use Illuminate\Http\Request;
 
 class JurusanController extends Controller
@@ -27,7 +28,14 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = [
+            'kode_jurusan' => $request->input('kode_jurusan'),
+            'jurusan' => $request->input('jurusan'),
+        ];
+
+        Jurusan::create($data);
+
+        return redirect()->back();
     }
 
     /**
