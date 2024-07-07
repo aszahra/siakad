@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SesiController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,5 +20,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('jurusan', JurusanController::class)->middleware(['auth']);
+
+Route::resource('sesi', SesiController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';

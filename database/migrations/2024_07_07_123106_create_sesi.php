@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sesi', function (Blueprint $table) {
             $table->string('kode_sesi')->primary();
             $table->string('sesi');
-            $table->string('pukul');
+            $table->time('pukul');
             $table->timestamps();
         });
     }
