@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DosenController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RuangController;
@@ -25,5 +26,7 @@ Route::resource('jurusan', JurusanController::class)->middleware(['auth']);
 Route::resource('sesi', SesiController::class)->middleware(['auth']);
 
 Route::resource('ruang', RuangController::class)->middleware(['auth']);
+
+Route::resource('dosen', DosenController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
